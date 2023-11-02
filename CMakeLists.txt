@@ -11,5 +11,13 @@ set(CMAKE_CXX_STANDARD 20)
 
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_SOURCE_DIR}/bin")
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
+function(ExternalTarget folder target)
+	set_property(TARGET ${target} PROPERTY FOLDER ${folder})
+endfunction(ExternalTarget)
+
 add_subdirectory(external)
 add_subdirectory(src)
+add_subdirectory(resources)
