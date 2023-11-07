@@ -1,5 +1,6 @@
 /out
 /.vs
 /bin
+/Build
 
 CMakeSetting.json

@@ -19,6 +19,8 @@ source_group(Headers FILES ${exe_Header})
 
 add_executable(${CMAKE_PROJECT_NAME} ${exe_Sources} ${exe_Header} "commandPool.h" "commandPool.cpp")
 
+set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/bin")
+
 target_include_directories(${CMAKE_PROJECT_NAME}
 PUBLIC
 	${EXT_ROOT_DIR}
