@@ -2,6 +2,8 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 set(RES_ROOT_DIR "resources")
 set(EXT_ROOT_DIR "${CMAKE_SOURCE_DIR}/external")
+set(SDL_INCLUDE_DIR "${EXT_ROOT_DIR}/SDL/include")
+set(GLM_INCLUDE_DIR "${EXT_ROOT_DIR}/glm/glm")
 
 file(GLOB_RECURSE exe_Sources
 	"*.cpp"
@@ -23,7 +25,8 @@ set_property(TARGET ${CMAKE_PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY
 
 target_include_directories(${CMAKE_PROJECT_NAME}
 PUBLIC
-	${EXT_ROOT_DIR}
+	${SDL_INCLUDE_DIR}
+	${GLM_INCLUDE_DIR}
 )
 
 target_link_libraries(${CMAKE_PROJECT_NAME}

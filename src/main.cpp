@@ -2,13 +2,15 @@
 
 #include <string>
 
-#include <SDL/include/SDL.h>
-#include <SDL/include/SDL_vulkan.h>
+#include <SDL.h>
+#include <SDL_vulkan.h>
 
 #include "instance.h"
 #include "graphicsPipeline.h"
 #include "commandPool.h"
 #include "commandbuffer.h"
+
+#include <glm.hpp>
 
 using namespace VK_Renderer;
 
@@ -76,7 +78,7 @@ int main(int argc, char* argv[])
 	{
 		throw std::runtime_error("Failed to Create Fence!");
 	}
-
+	
 	// Main Loop
 	SDL_Event e;
 	bool bQuit = false;
